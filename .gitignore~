@@ -11,5 +11,9 @@ local.properties
 .recommenders
 build/
 target/
+<<<<<<< HEAD
 .classpath
 test.txt
+=======
+*.DS_Store
+>>>>>>> fa6f1dbb15c5123fca6bd618c47f656f8b69ec9d

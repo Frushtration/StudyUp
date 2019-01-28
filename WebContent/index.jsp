@@ -1,6 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<<<<<<< HEAD
 <%@ page import="map.Lookup" %>
 <%@ page import="map.Location" %>
+=======
+<%@ page import="edu.studyup.map.Lookup" %>
+<%@ page import="edu.studyup.entity.Location" %>
+>>>>>>> fa6f1dbb15c5123fca6bd618c47f656f8b69ec9d
 <html>
 <head>
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
@@ -80,6 +85,13 @@
 		{double lat = loc.getLat(); double lon = loc.getLon();
         	%>
         	<script>gotoLoc(<%=lat%>, <%=lon%>);</script>
+       	Location loc = Lookup.lookupPlace(place);
+       	if (loc != null) {
+        	double lat = loc.lat;
+        	double lon = loc.lon;
+        	double[] bounds = loc.bounds; %>
+        	<script>gotoLoc(<%=lat%>, <%=lon%>, [<%=bounds[0]%>, <%=bounds[1]%>, <%=bounds[2]%>, <%=bounds[3]%>]);</script>
+
        	<%}
        }%>
 </body>
